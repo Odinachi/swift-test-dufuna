@@ -11,6 +11,8 @@
 		185FFD652C1C47AA00617F16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD642C1C47AA00617F16 /* ContentView.swift */; };
 		185FFD672C1C47AD00617F16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185FFD662C1C47AD00617F16 /* Assets.xcassets */; };
 		185FFD6A2C1C47AD00617F16 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185FFD692C1C47AD00617F16 /* Preview Assets.xcassets */; };
+		185FFD742C1C538100617F16 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD732C1C538100617F16 /* SplashScreen.swift */; };
+		185FFD762C1C53D200617F16 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD752C1C53D200617F16 /* LoginScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		185FFD642C1C47AA00617F16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		185FFD662C1C47AD00617F16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		185FFD692C1C47AD00617F16 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		185FFD732C1C538100617F16 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		185FFD752C1C53D200617F16 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,9 @@
 		185FFD612C1C47AA00617F16 /* dufunatest */ = {
 			isa = PBXGroup;
 			children = (
+				185FFD722C1C48A900617F16 /* Models */,
+				185FFD712C1C489D00617F16 /* ViewModels */,
+				185FFD702C1C489000617F16 /* Views */,
 				185FFD622C1C47AA00617F16 /* dufunatestApp.swift */,
 				185FFD642C1C47AA00617F16 /* ContentView.swift */,
 				185FFD662C1C47AD00617F16 /* Assets.xcassets */,
@@ -65,6 +72,29 @@
 				185FFD692C1C47AD00617F16 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		185FFD702C1C489000617F16 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				185FFD732C1C538100617F16 /* SplashScreen.swift */,
+				185FFD752C1C53D200617F16 /* LoginScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		185FFD712C1C489D00617F16 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		185FFD722C1C48A900617F16 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +167,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185FFD742C1C538100617F16 /* SplashScreen.swift in Sources */,
+				185FFD762C1C53D200617F16 /* LoginScreen.swift in Sources */,
 				185FFD652C1C47AA00617F16 /* ContentView.swift in Sources */,
 				185FFD632C1C47AA00617F16 /* dufunatestApp.swift in Sources */,
 			);
