@@ -23,7 +23,7 @@ struct LoginScreen: View {
                         .font(.title)
                         .foregroundColor(.black).fontWeight(.bold)
 
-                    .padding(.bottom, 5)
+                   
                     Text("Fill your details to get started")
                         .font(.subheadline).foregroundColor(.gray)
                         .padding(.bottom, 20)
@@ -65,16 +65,21 @@ struct LoginScreen: View {
                 }.padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
                 
                 
-                Button(action: {
-                    print("sign in")
+                NavigationLink(destination: {
+                    HomeScreen()
                 }) {
-                    Text("Sign in")
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .font(.system(size: 13))
-                        .padding()
-                        .foregroundColor(.white)
+                
+                        Text("Sign in")
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .font(.system(size: 13))
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(Color.gray)
+                            .cornerRadius(4)
+                            .padding()
+                    
                 }
-                .background(.gray).cornerRadius(4).padding()
+
                 
                 Text("Don’t have an account? ").foregroundColor(.gray).fontWeight(.regular).font(.system(size: 14)) +
                 Text("Contact Support").foregroundColor(Color("PrimaryColor")).fontWeight(.regular).font(.system(size: 14))
