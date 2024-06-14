@@ -14,6 +14,7 @@
 		185FFD742C1C538100617F16 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD732C1C538100617F16 /* SplashScreen.swift */; };
 		185FFD762C1C53D200617F16 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD752C1C53D200617F16 /* LoginScreen.swift */; };
 		185FFD7E2C1C834900617F16 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD7D2C1C834900617F16 /* HomeScreen.swift */; };
+		185FFD802C1D0F9700617F16 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD7F2C1D0F9700617F16 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		185FFD732C1C538100617F16 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		185FFD752C1C53D200617F16 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		185FFD7D2C1C834900617F16 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		185FFD7F2C1D0F9700617F16 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				185FFD732C1C538100617F16 /* SplashScreen.swift */,
 				185FFD752C1C53D200617F16 /* LoginScreen.swift */,
 				185FFD7D2C1C834900617F16 /* HomeScreen.swift */,
+				185FFD7F2C1D0F9700617F16 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				185FFD742C1C538100617F16 /* SplashScreen.swift in Sources */,
 				185FFD7E2C1C834900617F16 /* HomeScreen.swift in Sources */,
 				185FFD762C1C53D200617F16 /* LoginScreen.swift in Sources */,
+				185FFD802C1D0F9700617F16 /* HomeView.swift in Sources */,
 				185FFD652C1C47AA00617F16 /* ContentView.swift in Sources */,
 				185FFD632C1C47AA00617F16 /* dufunatestApp.swift in Sources */,
 			);

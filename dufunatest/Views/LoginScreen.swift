@@ -25,7 +25,7 @@ struct LoginScreen: View {
 
                    
                     Text("Fill your details to get started")
-                        .font(.subheadline).foregroundColor(.gray)
+                        .font(.subheadline).foregroundColor(Color("Gray"))
                         .padding(.bottom, 20)
                 }).padding(.leading, 16).frame(maxWidth: .infinity, alignment: .leading) // Ensure the VStack starts from the
                   
@@ -37,7 +37,7 @@ struct LoginScreen: View {
                 
                     .overlay(
                         RoundedRectangle(cornerRadius: 4)
-                            .stroke(Color.gray, lineWidth: 2)
+                            .stroke(Color("Gray"), lineWidth: 2)
                     )
                     .padding()
                 
@@ -48,13 +48,13 @@ struct LoginScreen: View {
                 
                     .overlay(
                         RoundedRectangle(cornerRadius: 4)
-                            .stroke(Color.gray, lineWidth: 2)
+                            .stroke(Color("Gray"), lineWidth: 2)
                     ).padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
                 HStack {
                     HStack{
                         
-                        Image(systemName: remember ? "checkmark.square.fill": "rectangle").resizable().frame(width: 18, height: 18).foregroundColor(remember ? Color("PrimaryColor"): .gray)
-                        Text("Remember me").foregroundColor(.gray).fontWeight(.regular).font(.system(size: 14))
+                        Image(systemName: remember ? "checkmark.square.fill": "rectangle").resizable().frame(width: 18, height: 18).foregroundColor(remember ? Color("PrimaryColor"):Color("Gray"))
+                        Text("Remember me").foregroundColor(Color("Gray")).fontWeight(.regular).font(.system(size: 14))
                         
                     }.onTapGesture(perform: {
                         remember = !remember
@@ -74,21 +74,21 @@ struct LoginScreen: View {
                             .font(.system(size: 13))
                             .padding()
                             .foregroundColor(.white)
-                            .background(Color.gray)
+                            .background(Color("Gray"))
                             .cornerRadius(4)
                             .padding()
                     
                 }
 
                 
-                Text("Don’t have an account? ").foregroundColor(.gray).fontWeight(.regular).font(.system(size: 14)) +
+                Text("Don’t have an account? ").foregroundColor(Color("Gray")).fontWeight(.regular).font(.system(size: 14)) +
                 Text("Contact Support").foregroundColor(Color("PrimaryColor")).fontWeight(.regular).font(.system(size: 14))
                 
                 Spacer()
                 
                 VStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, content:  {
                     Text("By clicking ‘Sign in’ above you agree to Arocare’s ")
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color("Gray"))
                         .fontWeight(.regular)
                         .font(.system(size: 13)) +
                     Text("Terms & Conditions")
@@ -96,7 +96,7 @@ struct LoginScreen: View {
                         .fontWeight(.regular)
                         .font(.system(size: 13)) +
                     Text(" and ")
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color("Gray"))
                         .fontWeight(.regular)
                         .font(.system(size: 13)) +
                     Text("Privacy Policy.")
