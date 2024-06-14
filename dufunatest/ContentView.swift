@@ -13,23 +13,25 @@ struct ContentView: View {
     
     var body: some View {
         
-        VStack{
-            if self.isActive {
-                LoginScreen()
-            } else {
-                SplashScreen()
-            }
-        }
-       .onAppear {
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-           
-                withAnimation {
-                    self.isActive = true
+        NavigationStack {
+            VStack{
+                if self.isActive {
+                    LoginScreen()
+                } else {
+                    SplashScreen()
                 }
             }
-        
-    }
+           .onAppear {
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+               
+                    withAnimation {
+                        self.isActive = true
+                    }
+                }
+            
+       }
+        }
     }
 }
 
