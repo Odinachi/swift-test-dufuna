@@ -49,7 +49,7 @@ struct HomeScreen: View {
                 } .padding(.leading, 40).padding(.trailing, 40).frame(maxWidth: .infinity, alignment: selectedTab == 0 ? .leading : selectedTab == 1 ?  .center : .trailing ) .animation(.easeInOut, value: selectedTab)
             }
             
-        }
+        } .navigationBarBackButtonHidden(true)
     }
 }
 
