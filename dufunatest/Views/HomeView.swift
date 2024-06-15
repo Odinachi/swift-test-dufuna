@@ -11,6 +11,8 @@ struct HomeView: View {
     
     @State private var clockedIn : Bool = false
     
+    @State private var selectedTab = 0
+    
     var body: some View {
         VStack(content: {
             HStack {
@@ -53,6 +55,35 @@ struct HomeView: View {
                         }.onTapGesture {
                             clockedIn = false
                         } }
+            
+            
+            VStack {
+                HStack(content: {
+                    
+                    HStack {
+                        Spacer()
+                        Text("Medication").foregroundColor(Color(selectedTab == 0 ? "PrimaryColor" : "Gray")).fontWeight(.bold).font(.system(size: 13))
+                        Spacer()
+                    }.onTapGesture {
+                        selectedTab = 0
+                    }
+                    HStack {
+                        Spacer()
+                        Text("Activities").foregroundColor(Color(selectedTab == 1 ? "PrimaryColor" : "Gray")).fontWeight(.bold).font(.system(size: 13))
+                        Spacer()
+                    }.onTapGesture {
+                        selectedTab = 1
+                    }
+                    
+                }).animation(.easeInOut, value: selectedTab)
+                HStack (spacing: 0) {
+                    
+                    Rectangle().frame(width: .infinity, height: 2).foregroundColor(Color(selectedTab == 0 ? "PrimaryColor" : "Gray"))
+                    
+                    Rectangle().frame(width: .infinity, height: 2).foregroundColor(Color(selectedTab == 1 ? "PrimaryColor" : "Gray"))
+                    
+                }.animation(.easeInOut, value: selectedTab)
+            }.padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
             
             HomeCard(isMed: true, name: "Sunny", time: Date.now)
             Spacer()
