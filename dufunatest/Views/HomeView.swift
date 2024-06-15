@@ -23,7 +23,7 @@ struct HomeView: View {
                 Image("Noti").resizable().frame(width: 32, height: 32)
             }.padding()
             
-            if clockedIn == false { Text("Clock-in")
+            if !clockedIn{ Text("Clock-in")
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .font(.system(size: 13)).fontWeight(.bold)
                     .padding()
@@ -53,6 +53,8 @@ struct HomeView: View {
                         }.onTapGesture {
                             clockedIn = false
                         } }
+            
+            HomeCard(isMed: true, name: "Sunny", time: Date.now)
             Spacer()
         })
     }

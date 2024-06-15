@@ -15,6 +15,7 @@
 		185FFD762C1C53D200617F16 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD752C1C53D200617F16 /* LoginScreen.swift */; };
 		185FFD7E2C1C834900617F16 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD7D2C1C834900617F16 /* HomeScreen.swift */; };
 		185FFD802C1D0F9700617F16 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD7F2C1D0F9700617F16 /* HomeView.swift */; };
+		185FFD852C1DF24D00617F16 /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD842C1DF24D00617F16 /* HomeCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		185FFD752C1C53D200617F16 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		185FFD7D2C1C834900617F16 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		185FFD7F2C1D0F9700617F16 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		185FFD842C1DF24D00617F16 /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				185FFD752C1C53D200617F16 /* LoginScreen.swift */,
 				185FFD7D2C1C834900617F16 /* HomeScreen.swift */,
 				185FFD7F2C1D0F9700617F16 /* HomeView.swift */,
+				185FFD842C1DF24D00617F16 /* HomeCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185FFD852C1DF24D00617F16 /* HomeCard.swift in Sources */,
 				185FFD742C1C538100617F16 /* SplashScreen.swift in Sources */,
 				185FFD7E2C1C834900617F16 /* HomeScreen.swift in Sources */,
 				185FFD762C1C53D200617F16 /* LoginScreen.swift in Sources */,
