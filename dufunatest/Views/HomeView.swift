@@ -13,7 +13,7 @@ struct HomeView: View {
     
     @State private var selectedTab = 0
     
-    let viewModel = AppViewModel.shared
+  @StateObject var viewModel = AppViewModel.shared
     
     var body: some View {
        
@@ -92,6 +92,8 @@ struct HomeView: View {
             
             HomeCard(isMed: true, name: "Sunny", time: Date.now)
             Spacer()
+        }).onAppear(perform: {
+            viewModel.fetchHomeData()
         })
     }
 }

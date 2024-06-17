@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginScreen: View {
     
-    let viewModel = AppViewModel.shared
+    @StateObject var viewModel = AppViewModel.shared
     
     @State private var username: String = ""
     
@@ -88,11 +88,10 @@ struct LoginScreen: View {
                         .padding()
                 }
                 .disabled(viewModel.isLoading ||  username.isEmpty || password.isEmpty).onChange(of: viewModel.isLoggedIn) { oldState, newState in
+               
                     if newState {
                       //we toggle the navigate flag after the user is logged in
                         navigateToHome = true
-                     
-                        
                     }
                 }.navigationDestination(isPresented: $navigateToHome, destination: {
                     HomeScreen()
