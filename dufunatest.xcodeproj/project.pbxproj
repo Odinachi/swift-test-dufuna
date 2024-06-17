@@ -16,6 +16,8 @@
 		185FFD7E2C1C834900617F16 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD7D2C1C834900617F16 /* HomeScreen.swift */; };
 		185FFD802C1D0F9700617F16 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD7F2C1D0F9700617F16 /* HomeView.swift */; };
 		185FFD852C1DF24D00617F16 /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD842C1DF24D00617F16 /* HomeCard.swift */; };
+		185FFD892C20609100617F16 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD882C20609100617F16 /* LoginModel.swift */; };
+		185FFD8B2C2061B900617F16 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD8A2C2061B900617F16 /* TaskModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		185FFD7D2C1C834900617F16 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		185FFD7F2C1D0F9700617F16 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		185FFD842C1DF24D00617F16 /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
+		185FFD882C20609100617F16 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		185FFD8A2C2061B900617F16 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 		185FFD722C1C48A900617F16 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				185FFD882C20609100617F16 /* LoginModel.swift */,
+				185FFD8A2C2061B900617F16 /* TaskModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,8 +185,10 @@
 				185FFD852C1DF24D00617F16 /* HomeCard.swift in Sources */,
 				185FFD742C1C538100617F16 /* SplashScreen.swift in Sources */,
 				185FFD7E2C1C834900617F16 /* HomeScreen.swift in Sources */,
+				185FFD8B2C2061B900617F16 /* TaskModel.swift in Sources */,
 				185FFD762C1C53D200617F16 /* LoginScreen.swift in Sources */,
 				185FFD802C1D0F9700617F16 /* HomeView.swift in Sources */,
+				185FFD892C20609100617F16 /* LoginModel.swift in Sources */,
 				185FFD652C1C47AA00617F16 /* ContentView.swift in Sources */,
 				185FFD632C1C47AA00617F16 /* dufunatestApp.swift in Sources */,
 			);
