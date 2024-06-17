@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginScreen: View {
     
-    @StateObject private var viewModel = AppViewModel()
+    let viewModel = AppViewModel.shared
     
     @State private var username: String = ""
     
@@ -63,6 +63,7 @@ struct LoginScreen: View {
                         Text("Remember me").foregroundColor(Color("Gray")).fontWeight(.regular).font(.system(size: 14))
                         
                     }.onTapGesture(perform: {
+                        //toggle remeber me
                         remember = !remember
                     })
                     Spacer()
@@ -72,6 +73,7 @@ struct LoginScreen: View {
                 
                 
                 Button(action: {
+                    //we only want to make the call when username and password is not empty
                     if !username.isEmpty && !password.isEmpty {
                         viewModel.login(username, password)
                     }
@@ -87,19 +89,20 @@ struct LoginScreen: View {
                 }
                 .disabled(viewModel.isLoading ||  username.isEmpty || password.isEmpty).onChange(of: viewModel.isLoggedIn) { oldState, newState in
                     if newState {
-                      
+                      //we toggle the navigate flag after the user is logged in
                         navigateToHome = true
-                        print("kkk set")
+                     
                         
                     }
                 }.navigationDestination(isPresented: $navigateToHome, destination: {
                     HomeScreen()
                 })
+                //loading
                 if viewModel.isLoading {
                     ProgressView("Logging in...")
                         .padding()
                 }
-                
+                //show error message
                 if let errorMessage = viewModel.errorMessage {
                     Text(errorMessage)
                         .foregroundColor(.red)

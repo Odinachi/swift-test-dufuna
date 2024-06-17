@@ -9,6 +9,9 @@ import Foundation
 import Combine
 
 class AppViewModel: ObservableObject {
+    //Using singleton to access our vm
+    static let shared = AppViewModel()
+    
     @Published var items: [TaskModel] = []
     
     @Published var isLoading: Bool = false
@@ -33,8 +36,11 @@ class AppViewModel: ObservableObject {
         }
 
         var request = URLRequest(url: url!)
+        //set the method
         request.httpMethod = "POST"
+        //set content type
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        //set the body
         request.httpBody = httpBody
 
         self.isLoading = true
@@ -47,6 +53,7 @@ class AppViewModel: ObservableObject {
             .sink(receiveCompletion: { [weak self] completion in
                 guard let self = self else { return }
                 self.isLoading = false
+                //check the status of our call
                 switch completion {
                 case .finished:
                     self.isLoggedIn = true
@@ -54,9 +61,10 @@ class AppViewModel: ObservableObject {
                 case .failure(let error):
                     self.errorMessage = "\(error.localizedDescription)"
                 }
-            }, receiveValue: { [weak self] response in
+            }, receiveValue: { [weak self] user in
                 guard let self = self else { return }
-                self.user = response
+                //set the user
+                self.user = user
                 self.isLoggedIn = true
             })
             .store(in: &self.cancellables)

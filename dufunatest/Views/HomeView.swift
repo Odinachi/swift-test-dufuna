@@ -13,11 +13,16 @@ struct HomeView: View {
     
     @State private var selectedTab = 0
     
+    let viewModel = AppViewModel.shared
+    
     var body: some View {
+       
         VStack(content: {
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Hi, George!").font(.system(size: 16)).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    
+                    
+                    Text("Hi, \(viewModel.user?.data?.user?.givenName ?? "")!").font(.system(size: 16)).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     Text("Clock-in to begin your task").font(.system(size: 16)).fontWeight(.regular).foregroundColor(.gray)
                     
                 }

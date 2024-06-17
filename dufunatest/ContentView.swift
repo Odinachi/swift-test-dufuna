@@ -22,7 +22,7 @@ struct ContentView: View {
                 }
             }
            .onAppear {
-                
+                //splash only last for 3secs
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                
                     withAnimation {
@@ -36,5 +36,6 @@ struct ContentView: View {
 }
 
 #Preview {
+    
     ContentView()
 }
