@@ -10,11 +10,11 @@ struct TaskModel: Codable {
     let status: String?
     let code: Int?
     let message: String?
-    let data: [Task]?
+    let data: [TaskItem]?
 }
 
 // MARK: - Datum
-struct Task: Codable {
+struct TaskItem: Codable {
     let taskID, taskType, timeOfDay, taskGroup: String?
     let action, order: String?
     let priority: String?

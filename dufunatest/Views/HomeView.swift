@@ -93,7 +93,9 @@ struct HomeView: View {
             HomeCard(isMed: true, name: "Sunny", time: Date.now)
             Spacer()
         }).onAppear(perform: {
-            viewModel.fetchHomeData()
+           Task {
+              await  viewModel.fetchHomeData()
+            }
         })
     }
 }

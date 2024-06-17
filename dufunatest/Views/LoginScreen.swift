@@ -75,7 +75,9 @@ struct LoginScreen: View {
                 Button(action: {
                     //we only want to make the call when username and password is not empty
                     if !username.isEmpty && !password.isEmpty {
-                        viewModel.login(username, password)
+                        Task {
+                            await viewModel.login(username, password)
+                        }
                     }
                 }) {
                     Text("Sign in")

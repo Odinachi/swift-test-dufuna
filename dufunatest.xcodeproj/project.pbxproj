@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180E68482C20F5F4002E9729 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E68472C20F5F4002E9729 /* ErrorModel.swift */; };
 		185FFD632C1C47AA00617F16 /* dufunatestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD622C1C47AA00617F16 /* dufunatestApp.swift */; };
 		185FFD652C1C47AA00617F16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FFD642C1C47AA00617F16 /* ContentView.swift */; };
 		185FFD672C1C47AD00617F16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185FFD662C1C47AD00617F16 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180E68472C20F5F4002E9729 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		185FFD5F2C1C47AA00617F16 /* dufunatest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dufunatest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185FFD622C1C47AA00617F16 /* dufunatestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dufunatestApp.swift; sourceTree = "<group>"; };
 		185FFD642C1C47AA00617F16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				185FFD882C20609100617F16 /* LoginModel.swift */,
 				185FFD8A2C2061B900617F16 /* TaskModel.swift */,
+				180E68472C20F5F4002E9729 /* ErrorModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				185FFD852C1DF24D00617F16 /* HomeCard.swift in Sources */,
 				185FFD742C1C538100617F16 /* SplashScreen.swift in Sources */,
 				185FFD7E2C1C834900617F16 /* HomeScreen.swift in Sources */,
+				180E68482C20F5F4002E9729 /* ErrorModel.swift in Sources */,
 				185FFD8B2C2061B900617F16 /* TaskModel.swift in Sources */,
 				185FFD762C1C53D200617F16 /* LoginScreen.swift in Sources */,
 				185FFD802C1D0F9700617F16 /* HomeView.swift in Sources */,

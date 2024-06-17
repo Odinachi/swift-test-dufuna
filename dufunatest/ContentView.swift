@@ -22,16 +22,16 @@ struct ContentView: View {
                     SplashScreen()
                 }
             }
-           .onAppear {
+            .onAppear {
                 //splash only last for 3secs
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-               
+                    
                     withAnimation {
                         self.isActive = true
                     }
                 }
-            
-       }
+                
+            }
         }
     }
 }
