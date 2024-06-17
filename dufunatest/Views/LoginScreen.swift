@@ -9,9 +9,15 @@ import SwiftUI
 
 struct LoginScreen: View {
     
+    @StateObject private var viewModel = AppViewModel()
+    
     @State private var username: String = ""
+    
     @State private var password: String = ""
+    
     @State private var remember: Bool = false
+    
+    @State private var navigateToHome = false
     
     var body: some View {
         ZStack {
@@ -22,13 +28,13 @@ struct LoginScreen: View {
                     Text("Welcome back!👋")
                         .font(.title)
                         .foregroundColor(.black).fontWeight(.bold)
-
-                   
+                    
+                    
                     Text("Fill your details to get started")
                         .font(.subheadline).foregroundColor(Color("Gray"))
                         .padding(.bottom, 20)
                 }).padding(.leading, 16).frame(maxWidth: .infinity, alignment: .leading) // Ensure the VStack starts from the
-                  
+                
                 
                 
                 TextField("Username", text: $username)
@@ -65,21 +71,41 @@ struct LoginScreen: View {
                 }.padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
                 
                 
-                NavigationLink(destination: {
-                    HomeScreen()
+                Button(action: {
+                    if !username.isEmpty && !password.isEmpty {
+                        viewModel.login(username, password)
+                    }
                 }) {
-                
-                        Text("Sign in")
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .font(.system(size: 13))
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(Color("Gray"))
-                            .cornerRadius(4)
-                            .padding()
-                    
+                    Text("Sign in")
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .font(.system(size: 13))
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color( (username.isEmpty || password.isEmpty ) ? "Gray" : "PrimaryColor"))
+                        .cornerRadius(4)
+                        .padding()
                 }
-
+                .disabled(viewModel.isLoading ||  username.isEmpty || password.isEmpty).onChange(of: viewModel.isLoggedIn) { oldState, newState in
+                    if newState {
+                      
+                        navigateToHome = true
+                        print("kkk set")
+                        
+                    }
+                }.navigationDestination(isPresented: $navigateToHome, destination: {
+                    HomeScreen()
+                })
+                if viewModel.isLoading {
+                    ProgressView("Logging in...")
+                        .padding()
+                }
+                
+                if let errorMessage = viewModel.errorMessage {
+                    Text(errorMessage)
+                        .foregroundColor(.red)
+                        .padding()
+                }
+                
                 
                 Text("Don’t have an account? ").foregroundColor(Color("Gray")).fontWeight(.regular).font(.system(size: 14)) +
                 Text("Contact Support").foregroundColor(Color("PrimaryColor")).fontWeight(.regular).font(.system(size: 14))
@@ -108,7 +134,6 @@ struct LoginScreen: View {
                     .frame(maxWidth: .infinity, alignment: .center)
             }
         }
-
     }
 }
 
