@@ -13,10 +13,10 @@ struct HomeView: View {
     
     @State private var selectedTab = 0
     
-  @StateObject var viewModel = AppViewModel.shared
+    @StateObject var viewModel = AppViewModel.shared
     
     var body: some View {
-       
+        
         VStack(content: {
             HStack {
                 VStack(alignment: .leading) {
@@ -107,14 +107,14 @@ struct HomeView: View {
             } else {
                 List(viewModel.items, id: \.self) { item in
                     HomeCard(isMed: true, name: item.taskAssignments?[0].assignee?.firstName ?? "", time: item.hourOfDay ?? "")
-                                }
-                                .listStyle(PlainListStyle())
+                }
+                .listStyle(PlainListStyle())
             }
             Spacer()
         }).onAppear(perform: {
-           Task {
-               print("kkk call")
-              await  viewModel.fetchHomeData()
+            Task {
+                //get home data
+                await  viewModel.fetchHomeData()
             }
         })
     }

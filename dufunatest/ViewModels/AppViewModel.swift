@@ -88,8 +88,6 @@ class AppViewModel: ObservableObject {
         self.isLoading = true
         self.errorMessage = nil
         
-        print("kkk call 1 \(self.isLoading)")
-        
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -99,7 +97,7 @@ class AppViewModel: ObservableObject {
         
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
-            print("kkk call 2 \(response)")
+          
             if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
                 let errorResponse = try? JSONDecoder().decode(ErrorModel.self, from: data)
                 self.errorMessage = errorResponse?.message ?? "HTTP Error: \(httpResponse.statusCode)"
@@ -109,7 +107,7 @@ class AppViewModel: ObservableObject {
          
             print("kkk call 3 \(data)")
             let taskModel = try JSONDecoder().decode(TaskModel.self, from: data)
-            print("kkkkkkk 1 \(taskModel.data!)")
+            
             self.items = taskModel.data ?? []
             
         } catch {
