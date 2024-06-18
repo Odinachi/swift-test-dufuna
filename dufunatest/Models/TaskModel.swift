@@ -14,13 +14,21 @@ struct TaskModel: Codable {
 }
 
 // MARK: - Datum
-struct TaskItem: Codable {
-    let taskID, taskType, timeOfDay, taskGroup: String?
-    let action, order: String?
+import Foundation
+
+struct TaskItem: Codable, Hashable {
+    let taskID: String?
+    let taskType: String?
+    let timeOfDay: String?
+    let taskGroup: String?
+    let action: String?
+    let order: String?
     let priority: String?
     let taskDetailRef: String?
-    let hourOfDay, supportLevel: String?
-    let taskStartedOn, taskEndedOn: JSONNull?
+    let hourOfDay: String?
+    let supportLevel: String?
+    let taskStartedOn: JSONNull?
+    let taskEndedOn: JSONNull?
     let taskDate: String?
     let workStatus: JSONNull?
     let isAssigned: Bool?
@@ -36,6 +44,22 @@ struct TaskItem: Codable {
         case userID = "userId"
         case taskScheduleID = "taskScheduleId"
         case taskAssignments
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(taskID)
+        hasher.combine(taskType)
+        hasher.combine(timeOfDay)
+        hasher.combine(taskGroup)
+        // Continue combining other properties as needed
+    }
+    
+    static func == (lhs: TaskItem, rhs: TaskItem) -> Bool {
+        return lhs.taskID == rhs.taskID &&
+               lhs.taskType == rhs.taskType &&
+               lhs.timeOfDay == rhs.timeOfDay &&
+               lhs.taskGroup == rhs.taskGroup
+        // Continue comparing other properties as needed
     }
 }
 

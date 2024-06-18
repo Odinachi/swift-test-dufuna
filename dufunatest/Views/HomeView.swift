@@ -90,10 +90,30 @@ struct HomeView: View {
                 }.animation(.easeInOut, value: selectedTab)
             }.padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
             
-            HomeCard(isMed: true, name: "Sunny", time: Date.now)
+            if viewModel.isLoading {
+                VStack(alignment: .center) {
+                    Spacer()
+                    ProgressView()
+                    Spacer()
+                }
+                
+                
+            } else if (viewModel.items.isEmpty) {
+                VStack {
+                    Spacer()
+                    Text("No Activity").padding()
+                    Spacer()
+                }
+            } else {
+                List(viewModel.items, id: \.self) { item in
+                    HomeCard(isMed: true, name: item.taskAssignments?[0].assignee?.firstName ?? "", time: item.hourOfDay ?? "")
+                                }
+                                .listStyle(PlainListStyle())
+            }
             Spacer()
         }).onAppear(perform: {
            Task {
+               print("kkk call")
               await  viewModel.fetchHomeData()
             }
         })

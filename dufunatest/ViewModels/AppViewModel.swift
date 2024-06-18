@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+@MainActor
 class AppViewModel: ObservableObject {
     //Using singleton to access our vm
     static let shared = AppViewModel()
@@ -26,7 +27,7 @@ class AppViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     
-    func login(_ username: String, _ password: String) async {
+    @MainActor  func login(_ username: String, _ password: String) async {
         guard let url = URL(string: "https://api.staging.caresaas.co.uk/caresaas/v1/services/auth/login") else {
             self.errorMessage = "Invalid URL"
             return
@@ -74,7 +75,7 @@ class AppViewModel: ObservableObject {
         self.isLoading = false
     }
     
-    func fetchHomeData() async {
+    @MainActor func fetchHomeData() async {
         guard let userID = user?.data?.user?.userID else {
             self.errorMessage = "User ID not found"
             return
@@ -84,28 +85,33 @@ class AppViewModel: ObservableObject {
             self.errorMessage = "Invalid URL"
             return
         }
+        self.isLoading = true
+        self.errorMessage = nil
+        
+        print("kkk call 1 \(self.isLoading)")
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(user?.data?.userToken?.accessToken ?? "")", forHTTPHeaderField: "Authorization")
         
-        self.isLoading = true
-        self.errorMessage = nil
+       
         
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
-            
+            print("kkk call 2 \(response)")
             if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
                 let errorResponse = try? JSONDecoder().decode(ErrorModel.self, from: data)
                 self.errorMessage = errorResponse?.message ?? "HTTP Error: \(httpResponse.statusCode)"
                 self.isLoading = false
                 return
             }
-            
+         
+            print("kkk call 3 \(data)")
             let taskModel = try JSONDecoder().decode(TaskModel.self, from: data)
+            print("kkkkkkk 1 \(taskModel.data!)")
             self.items = taskModel.data ?? []
-            print("KKKKKK here \(self.items)")
+            
         } catch {
             self.errorMessage = error.localizedDescription
         }

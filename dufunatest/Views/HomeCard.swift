@@ -10,9 +10,9 @@ import SwiftUI
 struct HomeCard: View {
     var isMed : Bool
     var name : String
-    var time: Date
+    var time: String
     
-    init(isMed: Bool, name: String, time: Date) {
+    init(isMed: Bool, name: String, time: String) {
         self.isMed = isMed
         self.name = name
         self.time = time
@@ -48,7 +48,7 @@ struct HomeCard: View {
                 Spacer()
                 HStack(content: {
                     Image("Clock").resizable().frame(width: 16, height: 18)
-                    Text("10:00 AM").fontWeight(.medium).font(.system(size: 14))
+                    Text(time).fontWeight(.medium).font(.system(size: 14))
                 })
             })
             
@@ -58,5 +58,5 @@ struct HomeCard: View {
 }
 
 #Preview {
-    HomeCard(isMed: true, name: "Sunny", time: Date.now)
+    HomeCard(isMed: true, name: "Sunny", time: "")
 }
